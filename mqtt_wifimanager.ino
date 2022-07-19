@@ -6,11 +6,11 @@
 #include <PubSubClient.h>
 #include <ESP8266WiFi.h>
 
-const char *mqtt_server = "rmq2.*******.id";
+const char *mqtt_server = "rmq2.******.id";
 const char *mqtt_user   = "/mahasiswaubl:ubliot";
-const char *mqtt_pass   = "********";
-const char *mqtt_topic  = "homeautoLSKK";
-const char *mqtt_cl     = "LSKK";
+const char *mqtt_pass   = "******";
+const char *mqtt_topic  = "homeautoLSKK/homeautoLSKK";
+const char *mqtt_cl     = "homeautoLSKK";
 char smqtt_port[5] = "1883";
 bool shouldSaveConfig = false;
 int KondisiLed = 0 ;
@@ -57,7 +57,7 @@ void saveConfigCallback () {
   Serial.println("Should save config");
   shouldSaveConfig = true;
 }
-void callback(char* mqtt_topic, byte* payload, unsigned int length) {
+void callback(char* mqtt_topic, byte* payload , unsigned int length) {
   String response;
 
   for (int i = 0; i < length; i++) {
